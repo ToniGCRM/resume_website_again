@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
- get "/pages/:page" => "pages#show"
- root "pages#show", page: "home"
+  resources :pages
+  root 'pages#home'
+  get '/about', to: 'pages#about'
+  get '/contact', to: 'pages#contact'
 end
